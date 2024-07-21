@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanka Law Lookup</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button>Home</button>
+            <button>Search</button>
+            <button>Help</button>
+            <button>AI chat</button>
+            <button style="float: right"><a href="contact.html">Contact Us</a></button>
+            <!--Why an 'a' tag, what does it do?-->
+        </nav>
+    </header>
+    <main>
+        <h1></h1>
+
+
+    </main>
