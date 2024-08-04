@@ -12,18 +12,21 @@
   --primary: #006fd6;
   --primary-background: #111111;
   --primary-foreground: #ffffff;
+  --primary-background-light: #333;
+  --primary-background-lighter: #555;
 }
 
 html,
-button {
+button,
+input {
   font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--primary-foreground);
 }
 
 body {
-  display: flex;
-  flex-flow: column nowrap;
   height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
   background: rgb(18, 18, 18);
   background: linear-gradient(
     90deg,
@@ -34,73 +37,19 @@ body {
   padding: 0;
 }
 
-main {
-  display: flex;
-  justify-content: space-between;
-  flex: 1;
-  margin: 0 10vw;
-}
-
-main section#hero-section {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-}
-
-main section#hero-section h1 {
-  margin: 0;
-  padding: 0;
-  font-weight: 200;
-  font-size: 5rem;
-}
-
-main section#hero-section h1 span {
-  font-weight: 500;
-}
-
-h2 {
-  font-weight: 200;
-  font-style: italic;
-}
-
-main section#hero-section img {
-  color: var(--primary-foreground);
-}
-
-main section#login-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-main section#login-section div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-main section#login-section div button:hover {
-  font-weight: bold;
-  background-color: var(--danger);
-}
-
-button {
-  background-color: var(--primary);
-  border: none;
-  padding: 0.5rem 2rem;
-  min-width: 150px;
-  font-size: 1rem;
-  transition: min-width 0.5s, background-color 0.5s;
-}
-
 header {
   display: flex;
 }
 
 header button:hover {
-  min-width: 200px;
+  min-width: 11rem;
   font-weight: bold;
+  background-color: var(--danger);
+}
+
+header button#contact {
+  margin-left: auto;
+  border-radius: 0 0 0 0.5rem;
   background-color: var(--danger);
 }
 
@@ -110,18 +59,100 @@ header nav button:last-child {
 
 header nav {
   display: flex;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
-header button#contact-us {
-  margin-left: auto;
-  border-radius: 0 0 0 0.5rem;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  flex: 1;
+  margin: 0 10vw;
+}
+
+button {
+  background-color: var(--primary);
+  border: none;
+  min-width: 10rem;
+  padding: 0;
+  font-size: 1rem;
+  transition: min-width 0.5s, background-color 0.5s;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--primary-foreground);
+}
+
+input {
+  font-size: 1rem;
+  color: var(--primary-background);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-weight: 200;
+  font-style: italic;
+}
+
+main section#hero {
+  display: flex;
+  align-items: center;
+}
+
+main section#hero h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+  font-size: 5rem;
+}
+
+main section#hero h1 span {
+  font-weight: 500;
+}
+
+main section#hero img {
+  color: var(--primary-foreground);
+}
+
+main section#signin {
+  margin: 0 auto;
+}
+
+main section#signin form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+main section#signin label {
+  margin-bottom: 0.5rem;
+}
+
+main section#auth {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+main section#auth div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+main section#auth div button:hover {
+  font-weight: bold;
   background-color: var(--danger);
 }
 
 footer {
   background-color: var(--primary-background);
-  border-top: 1px solid #333;
-  color: #555;
-  padding: 1rem 2rem;
+  border-top: 1px solid var(--primary-background-light);
+  color: var(--primary-background-lighter);
+  padding: 1rem 1.5rem;
 }
