@@ -6,27 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles.css">
   <script src="/script.js"></script>
-  <title>Sign in | L3</title>
+  <title>Sign up | L3</title>
 </head>
 
 <body>
-  <div id="floating-back">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left">
-      <path d="m15 18-6-6 6-6" />
-    </svg>
-    Back
-  </div>
   <main>
     <section class="auth-form">
-      <h2>Sign in</h2>
+      <h2>Sign up</h2>
       <form>
         <label for="email">Email Address</label>
         <input type="email" required autocomplete="email">
         <label for="password">Password</label>
         <input type="password" required autocomplete="current-password">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" autocomplete="confirm-password" required>
         <button class="auth-button" type="submit">
-          <a>Login</a>
+          <a>Register</a>
         </button>
       </form>
     </section>

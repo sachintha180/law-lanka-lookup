@@ -68,7 +68,7 @@ main {
   justify-content: space-between;
   flex-flow: row wrap;
   flex: 1;
-  margin: 0 10vw;
+  margin: 0 10vh;
 }
 
 button {
@@ -90,8 +90,11 @@ button a {
 
 input {
   font-size: 1rem;
-  color: var(--primary-background);
-  margin-bottom: 1rem;
+  color: var(--primary-foreground);
+  background-color: var(--primary-background-light);
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  border: none;
 }
 
 h2 {
@@ -119,33 +122,64 @@ main section#hero img {
   color: var(--primary-foreground);
 }
 
-main section#signin {
+main section.auth-form {
   margin: 0 auto;
+  min-width: 400px;
+  border: 1px solid var(--primary-background-light);
+  padding: 1rem 2rem 2rem 2rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-background);
 }
 
-main section#signin form {
+main section.auth-form form {
   display: flex;
   flex-flow: column nowrap;
 }
 
-main section#signin label {
-  margin-bottom: 0.5rem;
+main section.auth-form label {
+  margin-bottom: 0.8rem;
 }
 
-main section#auth {
+main section.auth-form button.auth-button {
+  margin-top: 1rem;
+}
+
+main section#aside {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
 }
 
-main section#auth div {
+main section#aside div {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
-main section#auth div button:hover {
+div#floating-back {
+  position: absolute;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  top: 1rem;
+  left: 1rem;
+  transition: background-color 0.5s;
+  background-color: var(--primary-background);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-background-light);
+  min-width: 100px;
+}
+
+div#floating-back:hover {
+  background-color: var(--danger);
+  cursor: pointer;
+}
+
+button:hover {
   font-weight: bold;
   background-color: var(--danger);
 }
