@@ -10,6 +10,7 @@
   --success: #33b127;
   --warning: #e7d90b;
   --primary: #006fd6;
+  --primary-dark: #004d96;
   --primary-background: #111111;
   --primary-foreground: #ffffff;
   --primary-background-light: #333;
@@ -41,9 +42,13 @@ header {
   display: flex;
 }
 
-header button:hover {
+header button:hover:not(.selected) {
   min-width: 11rem;
   font-weight: bold;
+  background-color: var(--danger);
+}
+
+header button.selected {
   background-color: var(--danger);
 }
 
@@ -69,6 +74,11 @@ main {
   flex-flow: row wrap;
   flex: 1;
   margin: 0 10vh;
+}
+
+main.column {
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 
 button {
@@ -155,6 +165,100 @@ main section#aside div {
   flex-flow: row wrap;
   justify-content: center;
   gap: 0.5rem;
+}
+
+main section#search {
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+main section#search h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+main section#search input {
+  width: 50vw;
+  margin-top: 3rem;
+}
+
+main section#results {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  margin-top: 2rem;
+}
+
+main section#results > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 60vw;
+  background-color: var(--primary);
+  padding: 0 1rem;
+  transition: opacity 0.5s;
+}
+
+main section#results > div:hover {
+  opacity: 0.8;
+}
+
+main section#results > div div.title {
+  flex: 1;
+  font-weight: bold;
+  margin: 0 1rem;
+  padding: 0 1rem;
+}
+
+main section#results > div div.title p.muted {
+  margin-top: -0.5rem;
+  color: #ffffff88;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+main section#results > div:nth-child(2n) {
+  background-color: var(--primary-dark);
+}
+
+section#chat {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30vw;
+  height: 100vh;
+  background-color: var(--primary-background-lighter);
+  box-shadow: 0 0 10px 10px #00000033;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+section#chat > div {
+  background-color: var(--primary-background);
+  display: flex;
+  flex: 1;
+  flex-flow: column nowrap;
+  border-radius: 0.5rem;
+}
+
+section#chat > div div.bubble {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  gap: 1rem;
+}
+
+section#chat > div div.bubble div.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 999rem;
+  background-color: var(--primary);
+  flex-shrink: 0;
 }
 
 div#floating-back {

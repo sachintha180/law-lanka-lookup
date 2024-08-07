@@ -6,7 +6,7 @@ function init() {
   for (const authButton of authButtons) {
     authButton.addEventListener("click", function (e) {
       e.preventDefault();
-      window.location.href = "/dashboard.html";
+      window.location.href = "/search.html";
     });
   }
 
