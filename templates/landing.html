@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{{ url_for('static', filename='styles.css') }}"
+      rel="stylesheet"
+    />
+    <title>L3 | Welcome</title>
+  </head>
+  <body class="container cols">
+    <header id="navbar" class="rows">
+      <img
+        src="{{ url_for('static', filename='images/logo.svg') }}"
+        alt="Law Lanka Lookup Logo"
+        id="logo"
+        height="50"
+        width="50"
+      />
+      <section id="nav-buttons" class="rows">
+        <button id="register">Register</button>
+        <button id="login">Login</button>
+      </section>
+    </header>
+
+    <main class="container rows">
+      <section id="title">
+        <p>Law</p>
+        <p>Lanka</p>
+        <p>Lookup</p>
+      </section>
+      <section id="main-image" class="rows">
+        <img
+          src="{{ url_for('static', filename='images/logo-letters.svg') }}"
+          alt="Main Image"
+          height="200"
+          width="200"
+        />
+      </section>
+      <section id="features" class="container cols">
+        <div>
+          <p class="feature-title">Manage Documents</p>
+          <p>Upload, organize, and share your legal documents with ease.</p>
+        </div>
+        <div>
+          <p class="feature-title">Connect with Lawyers</p>
+          <p>
+            Build your network and collaborate with others in the legal field.
+          </p>
+        </div>
+        <div>
+          <p class="feature-title">AI-Powered Chat</p>
+          <p>
+            Interact with your documents using an AI chatbot for efficient
+            querying.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="rows">
+      <p>&copy; 2024 Law Lanka Lookup. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="942.58142"
+   height="942.58142"
+   viewBox="0 0 249.39133 249.39133"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.53436207"
+     inkscape:cx="819.66896"
+     inkscape:cy="455.68354"
+     inkscape:window-width="1920"
+     inkscape:window-height="1007"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-81.175674,-124.67567)">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:2.11723;stroke-linecap:square;stroke-opacity:0.970621;paint-order:stroke fill markers"
+       id="rect452"
+       width="249.39133"
+       height="249.39133"
+       x="81.175674"
+       y="124.67567"
+       rx="20.011608"
+       ry="20.011608" />
+    <g
+       id="g579"
+       transform="matrix(4.0023218,0,0,4.0023218,-214.37245,-344.97345)"
+       style="fill:#080d49;fill-opacity:1;stroke:none">
+      <text
+         xml:space="preserve"
+         style="font-size:50.8px;font-family:'JetBrains Mono NL';-inkscape-font-specification:'JetBrains Mono NL';fill:#080d49;fill-opacity:1;stroke:none;stroke-width:0.529;stroke-linecap:square;stroke-opacity:0.970621;paint-order:stroke fill markers"
+         x="96.011612"
+         y="164.24379"
+         id="text236"
+         transform="translate(-8.7160608,6.3437471)"><tspan
+           sodipodi:role="line"
+           id="tspan234"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:FreeSerif;-inkscape-font-specification:FreeSerif;fill:#080d49;fill-opacity:1;stroke:none;stroke-width:0.529"
+           x="96.011612"
+           y="164.24379">L</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:33.7299px;font-family:FreeSerif;-inkscape-font-specification:FreeSerif;fill:#080d49;fill-opacity:1;stroke:none;stroke-width:0.351243;stroke-linecap:square;stroke-opacity:0.970621;paint-order:stroke fill markers"
+         x="116.17607"
+         y="142.78125"
+         id="text290"
+         transform="translate(-8.7160608,6.3437471)"><tspan
+           sodipodi:role="line"
+           id="tspan288"
+           style="fill:#080d49;fill-opacity:1;stroke:none;stroke-width:0.351243"
+           x="116.17607"
+           y="142.78125">3</tspan></text>
+    </g>
+  </g>
+</svg>

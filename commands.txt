@@ -1,0 +1,1 @@
+scss --watch static/scss/styles.scss:static/styles.css
