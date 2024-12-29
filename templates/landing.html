@@ -39,23 +39,12 @@
         />
       </section>
       <section id="features" class="container cols">
+        {% for feature in features %}
         <div>
-          <p class="feature-title">Manage Documents</p>
-          <p>Upload, organize, and share your legal documents with ease.</p>
+          <p class="feature-title">{{ feature.title }}</p>
+          <p>{{ feature.description }}</p>
         </div>
-        <div>
-          <p class="feature-title">Connect with Lawyers</p>
-          <p>
-            Build your network and collaborate with others in the legal field.
-          </p>
-        </div>
-        <div>
-          <p class="feature-title">AI-Powered Chat</p>
-          <p>
-            Interact with your documents using an AI chatbot for efficient
-            querying.
-          </p>
-        </div>
+        {% endfor %}
       </section>
     </main>
 
