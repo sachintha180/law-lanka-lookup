@@ -1,5 +1,5 @@
 import {
-  enableLoginClick,
+  enableLogoClick,
   enableLoginClick,
   enableRegisterClick,
 } from "./common.js";
