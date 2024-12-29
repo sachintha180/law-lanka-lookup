@@ -72,7 +72,7 @@ def register():
             return validation_result
 
         # Hash password
-        hashed_password = generate_password_hash(user_data["password"], method="sha256")
+        hashed_password = generate_password_hash(user_data["password"])
 
         # Get database connection
         conn = get_db_connection()
