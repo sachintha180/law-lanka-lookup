@@ -1,0 +1,100 @@
+main.container.cols {
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+  margin: 1rem auto;
+  gap: 2rem;
+}
+
+main section#profile {
+  align-items: flex-start;
+  width: 100%;
+}
+
+main section#profile p.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+
+main section#profile img#profile-image {
+  border-radius: 100%;
+}
+
+main section#profile div#profile-details {
+  gap: 2rem;
+  width: 100%;
+}
+
+main section#profile div#profile-details div#details {
+  align-items: flex-start;
+}
+
+main section#profile div#profile-details div#details span.badge {
+  margin-right: 0.5rem;
+  width: 100px;
+  display: inline-block;
+}
+
+main section#profile div#controls {
+  align-items: flex-start;
+  margin-left: auto;
+  gap: 0.5rem;
+}
+
+main section#profile div#controls button {
+  width: 100%;
+}
+
+main div#divider {
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+main div#divider section.card {
+  align-items: flex-start;
+  gap: 0;
+  width: 500px;
+}
+
+main div#divider section.card p.card-title {
+  width: 100%;
+}
+
+main div#divider section.card div.items {
+  width: 100%;
+  align-items: flex-start;
+}
+
+main div#divider section.card div.items div.item {
+  padding-left: 1rem;
+  border-left: 5px solid var(--border-color);
+  width: 100%;
+}
+
+main div#divider section.card div.items div.item div.cols {
+  align-items: flex-start;
+  gap: 5px;
+  width: 100%;
+}
+
+main div#divider section.card div.items div.item div.cols div.rows {
+  gap: 5px;
+}
+
+main div#divider section.card div.items div.item div.cols div.rows p.name {
+  font-weight: 600;
+}
+
+main div#divider section.card div.items div.item p.small {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+main div#divider section.card div.controls {
+  margin-top: 2rem;
+}

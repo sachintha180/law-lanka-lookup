@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="{{ url_for('static', filename='styles/common.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='styles/dashboard.css') }}"
+      rel="stylesheet"
+    />
+    <script src="{{ url_for('static', filename='scripts/dashboard.js') }}"></script>
+    <title>L3 | Dashboard</title>
+  </head>
+  <body class="container cols">
+    <header id="navbar" class="rows">
+      <img
+        src="{{ url_for('static', filename='images/logo.svg') }}"
+        alt="Law Lanka Lookup Logo"
+        id="logo"
+        height="50"
+        width="50"
+      />
+      <section id="nav-buttons" class="rows">
+        <button class="button" id="logout">Logout</button>
+      </section>
+    </header>
+
+    <main class="container cols">
+      <section id="profile" class="cols">
+        <p class="title" id="welcome">Welcome, {{ user.first_name }}</p>
+        <div id="profile-details" class="rows">
+          <img
+            src="{{ url_for('static', filename='images/avatar.jpg') }}"
+            id="profile-image"
+            alt="Profile Image"
+            height="100"
+            width="100"
+          />
+          <div id="details" class="cols">
+            <p><span class="badge">Name</span> {{ user.name }}</p>
+            <p><span class="badge">Email</span> {{ user.email }}</p>
+            <p><span class="badge">Expertise</span> {{ user.expertise }}</p>
+          </div>
+          <div id="controls" class="cols">
+            <button class="button secondary">Edit Profile</button>
+            <button class="button secondary">Change Password</button>
+            <button class="button danger">Delete Account</button>
+          </div>
+        </div>
+      </section>
+
+      <div id="divider" class="rows">
+        <section id="latest-reads" class="card cols">
+          <p class="card-title">Latest Reads</p>
+          <div class="items cols">
+            {% for document in latest_reads %}
+            <div class="item rows">
+              <div class="cols">
+                <div class="rows">
+                  <p class="name">{{ document.name }}</p>
+                  <span class="badge">{{ document.type }}</span>
+                </div>
+                <p class="small">Last Read: {{ document.date }}</p>
+              </div>
+              <button class="button">Read</button>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="controls">
+            <button id="library" class="button">Go to Library</button>
+          </div>
+        </section>
+        <section id="your-network" class="card cols">
+          <p class="card-title">Your Network</p>
+          <div class="items cols">
+            {% for user in last_online %}
+            <div class="item rows">
+              <div class="cols">
+                <div class="rows">
+                  <p class="name">{{ user.name }}</p>
+                  <span class="badge">{{ user.expertise }}</span>
+                </div>
+                <p class="small">Last Online: {{ user.last_online }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="controls">
+            <button id="network" class="button">View Full Network</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- 
+      <section id="network-summary" class="card">
+        <p class="card-title">Your Network</p>
+        <p>You have {{ friends_count }} friends.</p>
+        <button class="button" onclick="location.href='my-network.html'">
+          View My Network
+        </button>
+        <button class="button" onclick="location.href='search-profile.html'">
+          Find Friends
+        </button>
+      </section>
+
+      <section id="chatbot-access" class="card">
+        <p class="card-title">AI Chatbot</p>
+        <button class="button" onclick="location.href='chatbot.html'">
+          Start Chatbot
+        </button>
+      </section> -->
+    </main>
+
+    <footer class="rows">
+      <p>&copy; 2024 Law Lanka Lookup. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
