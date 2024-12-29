@@ -8,6 +8,7 @@
   --text-color: #ffffff;
   --background-color: #f0f0f0;
   --danger-color: #ff4d4d;
+  --success-color: #00b158;
   --primary-hover-color: #d6d9f0;
   --secondary-hover-color: #3a3a3a;
   --danger-hover-color: #ff6666;
@@ -15,7 +16,7 @@
   --border-color: #707070;
   --primary-badge-color: #080d49;
   --secondary-badge-color: #4d4d4d;
-  --error-transparent-background: #ffffffdd;
+  --modal-transparent-background: #ffffffdd;
 }
 
 /* Global Styles */
@@ -110,37 +111,44 @@
   margin-top: 2rem;
 }
 
-/* Error Modal Styles (derives card styles) */
-#error {
+/* Modal Styles (derives card styles) */
+#modal {
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--error-transparent-background);
+  background-color: var(--modal-transparent-background);
   z-index: 100;
 }
 
-#error.hidden {
+#modal.hidden {
   display: none;
 }
 
-#error-modal.card {
-  background-color: var(--danger-color);
-}
-
-#error-modal.card p.card-title {
+#modal-container.card p.card-title {
   border-bottom: 1px solid var(--text-color);
 }
 
-#error-modal.card div.controls button {
+#modal-container.card div.controls button {
   background-color: var(--text-color);
+}
+
+#modal-container.card.error {
+  background-color: var(--danger-color);
+}
+
+#modal-container.card.success {
+  background-color: var(--success-color);
+}
+
+#modal-container.card.error div.controls button {
   color: var(--danger-color);
 }
 
-#error-modal.card div.controls button:hover {
-  background-color: var(--danger-light-hover-color);
+#modal-container.card.success div.controls button {
+  color: var(--success-color);
 }
 
 /* Body Styles */

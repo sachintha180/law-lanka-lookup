@@ -1,30 +1,12 @@
 import {
   enableLogoClick,
   enableLoginClick,
-  showError,
-  enableErrorHide,
+  showModal,
+  enableModalHide,
+  getFormJSON,
 } from "./common.js";
 
 window.onload = init;
-
-function getFormJSON(formData) {
-  const data = {};
-  for (let [key, value] of formData.entries()) {
-    if (!value) {
-      return {
-        success: false,
-        error: `Please fill in the ${key} field.`,
-        data: data,
-      };
-    }
-    data[key] = value;
-  }
-  return {
-    success: true,
-    error: null,
-    data: data,
-  };
-}
 
 function enableRegister() {
   const form = document.getElementById("registration-form");
@@ -54,17 +36,12 @@ function enableRegister() {
         body: JSON.stringify(data),
       });
 
-      // Check if response is successful
-      if (!response.ok) {
-        throw new Error("Error in form submission, please try again later.");
-      }
-
       // Parse the response
       const result = await response.json();
 
-      // Check if successful
+      // Redirect to login page if successful
       if (result.success) {
-        window.location.href = "/login";
+        window.location.href = "/login?registered=true";
       }
 
       // Otherwise, throw error
@@ -73,19 +50,21 @@ function enableRegister() {
       }
     } catch (error) {
       // Show the error
-      showError("Registration Error", error.message);
+      showModal("Registration Error", error.message, "error");
     }
   };
 }
 
 function init() {
-  // Enable logo and login button click
+  // Enable the logo click
   enableLogoClick();
+
+  // Enable the login button click
   enableLoginClick();
 
   // Enable registration
   enableRegister();
 
-  // Enable error hide
-  enableErrorHide();
+  // Enable modal hide
+  enableModalHide();
 }

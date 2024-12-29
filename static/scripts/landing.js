@@ -1,19 +1,18 @@
+import {
+  enableLoginClick,
+  enableLoginClick,
+  enableRegisterClick,
+} from "./common.js";
+
 window.onload = init;
 
 function init() {
-  const logoImg = document.getElementById("logo");
-  const registerBtn = document.getElementById("register");
-  const loginBtn = document.getElementById("login");
+  // Enable the logo click
+  enableLogoClick();
 
-  logoImg.onclick = function () {
-    window.location.href = "/";
-  };
+  // Enable the login button click
+  enableLoginClick();
 
-  registerBtn.onclick = function () {
-    window.location.href = "/register";
-  };
-
-  loginBtn.onclick = function () {
-    window.location.href = "/login";
-  };
+  // Enable the register button click
+  enableRegisterClick();
 }
