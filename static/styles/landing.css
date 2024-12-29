@@ -1,0 +1,19 @@
+main.container.rows {
+  gap: 50px;
+  width: 90%;
+  flex: 1;
+}
+
+main section#title {
+  flex: 1;
+}
+
+main section#title p {
+  font-size: 4rem;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+main section#title p:nth-child(2) {
+  font-weight: 600;
+}

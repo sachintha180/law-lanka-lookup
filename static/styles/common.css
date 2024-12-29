@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+:root {
+  --primary-color: #080d49;
+  --secondary-color: #252525;
+  --text-color: #ffffff;
+  --background-color: #f0f0f0;
+  --hover-color: #b2b7e4;
+  --border-color: #707070;
+}
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  box-sizing: border-box;
+  color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.cols {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--hover-color);
+}
+
+.card {
+  background-color: var(--secondary-color);
+  padding: 1.5rem 2rem;
+  width: 600px;
+  border-radius: 0.5rem;
+}
+
+.card p,
+.card label {
+  color: var(--text-color);
+}
+
+.card p.card-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+body.container.cols {
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+img#logo {
+  cursor: pointer;
+}
+
+header {
+  background-color: var(--primary-color);
+}
+
+header#navbar {
+  width: 100%;
+  justify-content: left;
+  padding: 0.5rem 1rem;
+}
+
+header#navbar section#nav-buttons {
+  margin-left: auto;
+}
+
+footer.rows {
+  background-color: var(--primary-color);
+  width: 100%;
+  padding: 1rem 0;
+}
+
+footer.rows p {
+  color: var(--text-color);
+  text-transform: uppercase;
+}

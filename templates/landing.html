@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="{{ url_for('static', filename='styles.css') }}"
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+    <link
+      href="{{ url_for('static', filename='styles/common.css') }}"
       rel="stylesheet"
     />
+    <link
+      href="{{ url_for('static', filename='styles/landing.css') }}"
+      rel="stylesheet"
+    />
+    <script src="{{ url_for('static', filename='scripts/landing.js') }}"></script>
     <title>L3 | Welcome</title>
   </head>
   <body class="container cols">
@@ -19,8 +29,8 @@
         width="50"
       />
       <section id="nav-buttons" class="rows">
-        <button id="register">Register</button>
-        <button id="login">Login</button>
+        <button id="register" class="button">Register</button>
+        <button id="login" class="button">Login</button>
       </section>
     </header>
 
@@ -40,8 +50,8 @@
       </section>
       <section id="features" class="container cols">
         {% for feature in features %}
-        <div>
-          <p class="feature-title">{{ feature.title }}</p>
+        <div class="card">
+          <p class="card-title">{{ feature.title }}</p>
           <p>{{ feature.description }}</p>
         </div>
         {% endfor %}

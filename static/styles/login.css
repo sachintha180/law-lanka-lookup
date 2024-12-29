@@ -1,0 +1,12 @@
+main section#login-form {
+  width: 400px;
+}
+
+main section#login-form form {
+  align-items: start;
+  gap: 0.5rem;
+}
+
+main section#login-form form button {
+  align-self: center;
+}

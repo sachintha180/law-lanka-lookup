@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+    <link
+      href="{{ url_for('static', filename='styles/common.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='styles/register.css') }}"
+      rel="stylesheet"
+    />
+    <script src="{{ url_for('static', filename='scripts/register.js') }}"></script>
+    <title>L3 | Register</title>
+  </head>
+  <body class="container cols">
+    <header id="navbar" class="rows">
+      <img
+        src="{{ url_for('static', filename='images/logo.svg') }}"
+        alt="Law Lanka Lookup Logo"
+        id="logo"
+        height="50"
+        width="50"
+      />
+      <section id="nav-buttons" class="rows">
+        <button class="button" id="login">Login</button>
+      </section>
+    </header>
+
+    <main class="container cols">
+      <section id="register-form" class="card">
+        <p class="card-title">Register</p>
+        <form action="/register" method="POST" class="cols">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+            class="input-field"
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="new-password"
+            required
+            class="input-field"
+          />
+
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Confirm your password"
+            required
+            class="input-field"
+          />
+
+          <button type="submit" class="button">Register</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="rows">
+      <p>&copy; 2024 Law Lanka Lookup. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
