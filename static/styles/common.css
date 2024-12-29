@@ -10,6 +10,8 @@
   --secondary-hover-color: #3a3a3a;
   --danger-hover-color: #ff6666;
   --border-color: #707070;
+  --primary-badge-color: #080d49;
+  --secondary-badge-color: #4d4d4d;
 }
 
 * {
@@ -123,7 +125,7 @@ img#logo {
 }
 
 span.badge {
-  background-color: var(--primary-color);
+  background-color: var(--primary-badge-color);
   color: var(--text-color);
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;

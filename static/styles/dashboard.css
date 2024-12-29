@@ -90,6 +90,10 @@ main div#divider section.card div.items div.item div.cols div.rows p.name {
   font-weight: 600;
 }
 
+main div#divider section.card div.items div.item div.cols div.rows span.badge {
+  background-color: var(--secondary-badge-color);
+}
+
 main div#divider section.card div.items div.item p.small {
   font-size: 0.8rem;
   color: var(--text-color);
