@@ -65,3 +65,17 @@ last_online = [
         "last_online": "2021-01-04",
     },
 ]
+
+legal_occupations = {
+    "lawyer": "Lawyer",
+    "paralegal": "Paralegal",
+    "legalSecretary": "Legal Secretary",
+    "judge": "Judge",
+    "courtClerk": "Court Clerk",
+    "mediator": "Mediator",
+    "legalAnalyst": "Legal Analyst",
+    "complianceOfficer": "Compliance Officer",
+    "legalConsultant": "Legal Consultant",
+    "lawProfessor": "Law Professor",
+    "other": "Other",
+}

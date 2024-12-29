@@ -98,7 +98,3 @@ main div#divider section.card div.items div.item p.small {
   font-size: 0.8rem;
   color: var(--text-color);
 }
-
-main div#divider section.card div.controls {
-  margin-top: 2rem;
-}

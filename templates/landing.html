@@ -16,7 +16,14 @@
       href="{{ url_for('static', filename='styles/landing.css') }}"
       rel="stylesheet"
     />
-    <script src="{{ url_for('static', filename='scripts/landing.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='scripts/common.js') }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='scripts/landing.js') }}"
+    ></script>
     <title>L3 | Welcome</title>
   </head>
   <body class="container cols">

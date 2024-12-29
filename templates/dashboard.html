@@ -11,7 +11,14 @@
       href="{{ url_for('static', filename='styles/dashboard.css') }}"
       rel="stylesheet"
     />
-    <script src="{{ url_for('static', filename='scripts/dashboard.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='scripts/common.js') }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='scripts/dashboard.js') }}"
+    ></script>
     <title>L3 | Dashboard</title>
   </head>
   <body class="container cols">
@@ -42,7 +49,7 @@
           <div id="details" class="cols">
             <p><span class="badge">Name</span> {{ user.name }}</p>
             <p><span class="badge">Email</span> {{ user.email }}</p>
-            <p><span class="badge">Expertise</span> {{ user.expertise }}</p>
+            <p><span class="badge">Occupation</span> {{ user.occupation }}</p>
           </div>
           <div id="controls" class="cols">
             <button class="button secondary">Edit Profile</button>

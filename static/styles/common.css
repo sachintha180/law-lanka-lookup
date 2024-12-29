@@ -1,5 +1,7 @@
+/* Font Import */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
+/* Global Colors */
 :root {
   --primary-color: #080d49;
   --secondary-color: #252525;
@@ -9,11 +11,14 @@
   --primary-hover-color: #d6d9f0;
   --secondary-hover-color: #3a3a3a;
   --danger-hover-color: #ff6666;
+  --danger-light-hover-color: #ffdfdf;
   --border-color: #707070;
   --primary-badge-color: #080d49;
   --secondary-badge-color: #4d4d4d;
+  --error-transparent-background: #ffffffdd;
 }
 
+/* Global Styles */
 * {
   font-family: "Plus Jakarta Sans", sans-serif;
   box-sizing: border-box;
@@ -22,6 +27,7 @@
   padding: 0;
 }
 
+/* Container Classes */
 .container {
   display: flex;
   height: 100%;
@@ -43,6 +49,7 @@
   gap: 1rem;
 }
 
+/* Button Styles */
 .button {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 0.8rem;
@@ -78,6 +85,7 @@
   background-color: var(--danger-hover-color);
 }
 
+/* Card Styles */
 .card {
   background-color: var(--secondary-color);
   padding: 1.5rem 2rem;
@@ -98,18 +106,58 @@
   border-bottom: 1px solid var(--border-color);
 }
 
+.card div.controls {
+  margin-top: 2rem;
+}
+
+/* Error Modal Styles (derives card styles) */
+#error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--error-transparent-background);
+  z-index: 100;
+}
+
+#error.hidden {
+  display: none;
+}
+
+#error-modal.card {
+  background-color: var(--danger-color);
+}
+
+#error-modal.card p.card-title {
+  border-bottom: 1px solid var(--text-color);
+}
+
+#error-modal.card div.controls button {
+  background-color: var(--text-color);
+  color: var(--danger-color);
+}
+
+#error-modal.card div.controls button:hover {
+  background-color: var(--danger-light-hover-color);
+}
+
+/* Body Styles */
 body.container.cols {
   height: 100vh;
   background-color: var(--background-color);
 }
 
+/* Form Styles */
 label {
   font-size: 0.9rem;
 }
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+select {
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
   border: none;
@@ -118,12 +166,14 @@ input[type="password"] {
   width: 100%;
 }
 
+/* Logo Styles */
 img#logo {
   cursor: pointer;
   width: 40px;
   height: 40px;
 }
 
+/* Badge Styles */
 span.badge {
   background-color: var(--primary-badge-color);
   color: var(--text-color);
@@ -134,6 +184,7 @@ span.badge {
   text-transform: uppercase;
 }
 
+/* Header, Navbar and Footer Styles */
 header {
   background-color: var(--primary-color);
 }

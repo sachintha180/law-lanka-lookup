@@ -16,7 +16,14 @@
       href="{{ url_for('static', filename='styles/register.css') }}"
       rel="stylesheet"
     />
-    <script src="{{ url_for('static', filename='scripts/register.js') }}"></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='scripts/common.js') }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ url_for('static', filename='scripts/register.js') }}"
+    ></script>
     <title>L3 | Register</title>
   </head>
   <body class="container cols">
@@ -33,10 +40,25 @@
       </section>
     </header>
 
+    <section id="error" class="hidden">
+      <div id="error-modal" class="card">
+        <p id="error-title" class="card-title">ERROR_TITLE</p>
+        <p id="error-message">ERROR_MESSAGE</p>
+        <div class="controls">
+          <button class="button" id="ok-error">OK</button>
+        </div>
+      </div>
+    </section>
+
     <main class="container cols">
       <section id="register-form" class="card">
         <p class="card-title">Register</p>
-        <form action="/register" method="POST" class="cols">
+        <form
+          action="/register"
+          method="POST"
+          id="registration-form"
+          class="cols"
+        >
           <label for="email">Email</label>
           <input
             type="email"
@@ -45,8 +67,15 @@
             placeholder="Enter your email"
             autocomplete="email"
             required
-            class="input-field"
           />
+
+          <label for="occupation">Occupation</label>
+          <select id="occupation" name="occupation" required>
+            <option value="" disabled selected>Select your occupation</option>
+            {% for occupationId, occupation in legal_occupations.items() %}
+            <option value="{{ occupationId }}">{{ occupation }}</option>
+            {% endfor %}
+          </select>
 
           <label for="password">Password</label>
           <input
@@ -56,14 +85,13 @@
             placeholder="Enter your password"
             autocomplete="new-password"
             required
-            class="input-field"
           />
 
           <label for="confirm-password">Confirm Password</label>
           <input
             type="password"
             id="confirm-password"
-            name="confirm-password"
+            name="confirmPassword"
             placeholder="Confirm your password"
             required
             class="input-field"
