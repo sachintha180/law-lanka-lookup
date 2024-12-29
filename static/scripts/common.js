@@ -21,7 +21,7 @@ export function enableRegisterClick() {
 
 export function showModal(title, message, type) {
   const modalContainer = document.getElementById("modal");
-  const modalTitle = modalContainer.getElementById("modal-title");
+  const modalTitle = document.document("modal-title");
   const modalMessage = modalContainer.getElementById("modal-message");
 
   modalContainer.classList.remove("hidden");
@@ -33,7 +33,7 @@ export function showModal(title, message, type) {
 
 export function enableModalHide() {
   const modalContainer = document.getElementById("modal");
-  const okButton = modalContainer.getElementById("ok");
+  const okButton = document.getElementById("modal-ok");
 
   okButton.onclick = function () {
     modalContainer.classList.remove("error");
