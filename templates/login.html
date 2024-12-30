@@ -51,9 +51,9 @@
     </section>
 
     <main class="container cols">
-      <section id="login-form" class="card">
+      <section id="login-form-container" class="card">
         <p class="card-title">Login</p>
-        <form action="/login" method="POST" class="cols">
+        <form action="/login" method="POST" id="login-form" class="cols">
           <label for="email">Email</label>
           <input
             type="email"
@@ -73,7 +73,7 @@
             autocomplete="current-password"
             required
           />
-          <button type="submit" class="button">Login</button>
+          <button type="submit" id="login-button" class="button">Login</button>
         </form>
       </section>
     </main>

@@ -1,13 +1,37 @@
-import { enableLogoClick, enableRegisterClick, getFormJSON } from "./common.js";
+import {
+  enableLogoClick,
+  enableRegisterClick,
+  showModal,
+  enableModalHide,
+  getFormJSON,
+} from "./common.js";
 
 window.onload = init;
 
+function checkJustRegistered() {
+  // Get the URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // Show the modal if the URL contains the 'registered' parameter
+  if (urlParams.get("registered") === "true") {
+    showModal(
+      "Registration Successful",
+      "You have successfully registered. Please log in to continue.",
+      "success"
+    );
+  }
+}
+
 function enableLogin() {
   const form = document.getElementById("login-form");
+  const formButton = document.getElementById("login-button");
 
   form.onsubmit = async function (event) {
     // Prevent the form from submitting
     event.preventDefault();
+
+    // Disable the form button
+    formButton.disabled = true;
 
     // Get the form data
     const formData = new FormData(form);
@@ -35,7 +59,7 @@ function enableLogin() {
 
       // Redirect to dashboard page if successful
       if (result.success) {
-        window.location.href = "/dashboard";
+        window.location.href = "/dashboard?login=true";
       }
 
       // Otherwise, throw error
@@ -46,10 +70,16 @@ function enableLogin() {
       // Show the error
       showModal("Login Error", error.message, "error");
     }
+
+    // Enable the form button
+    formButton.disabled = false;
   };
 }
 
 function init() {
+  // Check if the user just registered
+  checkJustRegistered();
+
   // Enable the logo click
   enableLogoClick();
 

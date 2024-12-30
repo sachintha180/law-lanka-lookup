@@ -12,6 +12,13 @@ export function enableLoginClick() {
   };
 }
 
+export function enableLogoutClick() {
+  const logoutBtn = document.getElementById("logout");
+  logoutBtn.onclick = function () {
+    window.location.href = "/logout";
+  };
+}
+
 export function enableRegisterClick() {
   const registerBtn = document.getElementById("register");
   registerBtn.onclick = function () {
@@ -20,11 +27,12 @@ export function enableRegisterClick() {
 }
 
 export function showModal(title, message, type) {
-  const modalContainer = document.getElementById("modal");
-  const modalTitle = document.document("modal-title");
-  const modalMessage = modalContainer.getElementById("modal-message");
+  const modal = document.getElementById("modal");
+  const modalContainer = document.getElementById("modal-container");
+  const modalTitle = document.getElementById("modal-title");
+  const modalMessage = document.getElementById("modal-message");
 
-  modalContainer.classList.remove("hidden");
+  modal.classList.remove("hidden");
   modalContainer.classList.add(type);
 
   modalTitle.innerText = title;
@@ -32,13 +40,14 @@ export function showModal(title, message, type) {
 }
 
 export function enableModalHide() {
-  const modalContainer = document.getElementById("modal");
+  const modal = document.getElementById("modal");
+  const modalContainer = document.getElementById("modal-container");
   const okButton = document.getElementById("modal-ok");
 
   okButton.onclick = function () {
+    modal.classList.add("hidden");
     modalContainer.classList.remove("error");
     modalContainer.classList.remove("success");
-    modalContainer.classList.add("hidden");
   };
 }
 

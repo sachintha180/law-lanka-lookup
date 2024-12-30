@@ -9,11 +9,15 @@ import {
 window.onload = init;
 
 function enableRegister() {
-  const form = document.getElementById("registration-form");
+  const form = document.getElementById("register-form");
+  const formButton = document.getElementById("register-button");
 
   form.onsubmit = async function (event) {
     // Prevent the form from submitting
     event.preventDefault();
+
+    // Disable the form button
+    formButton.disabled = true;
 
     // Get the form data
     const formData = new FormData(form);
@@ -53,6 +57,9 @@ function enableRegister() {
       showModal("Registration Error", error.message, "error");
     }
   };
+
+  // Enable the form button
+  formButton.disabled = false;
 }
 
 function init() {

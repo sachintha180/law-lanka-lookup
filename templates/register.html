@@ -51,14 +51,9 @@
     </section>
 
     <main class="container cols">
-      <section id="register-form" class="card">
+      <section id="register-form-container" class="card">
         <p class="card-title">Register</p>
-        <form
-          action="/register"
-          method="POST"
-          id="registration-form"
-          class="cols"
-        >
+        <form action="/register" method="POST" id="register-form" class="cols">
           <label for="email">Email</label>
           <input
             type="email"
@@ -97,7 +92,9 @@
             class="input-field"
           />
 
-          <button type="submit" class="button">Register</button>
+          <button type="submit" id="register-button" class="button">
+            Register
+          </button>
         </form>
       </section>
     </main>

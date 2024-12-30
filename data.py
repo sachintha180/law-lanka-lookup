@@ -17,7 +17,7 @@ user = {
     "first_name": "Sachintha",
     "name": "Sachintha Senanayake",
     "email": "sachintha@gmail.com",
-    "expertise": "Conveyancer",
+    "occupation": "Conveyancer",
 }
 
 latest_reads = [

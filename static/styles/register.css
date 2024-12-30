@@ -1,12 +1,12 @@
-main section#register-form {
+main section#register-form-container {
   width: 500px;
 }
 
-main section#register-form form {
+main section#register-form-container form {
   align-items: start;
   gap: 0.5rem;
 }
 
-main section#register-form form button {
+main section#register-form-container form button {
   align-self: center;
 }
