@@ -1,12 +1,3 @@
 main section#login-form-container {
   width: 400px;
 }
-
-main section#login-form-container form {
-  align-items: start;
-  gap: 0.5rem;
-}
-
-main section#login-form-container form button {
-  align-self: center;
-}

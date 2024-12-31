@@ -78,18 +78,9 @@ function enableLogin() {
 }
 
 function init() {
-  // Check if the user just registered
   checkJustRegistered();
-
-  // Enable the logo click
   enableLogoClick();
-
-  // Enable the register button click
   enableRegisterClick();
-
-  // Enable login
   enableLogin();
-
-  // Enable message modal hide
   enableModalHide("message-modal");
 }

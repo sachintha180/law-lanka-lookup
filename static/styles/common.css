@@ -158,6 +158,19 @@ body.container.cols {
 }
 
 /* Form Styles */
+.form-container {
+  width: 500px;
+}
+
+.form-container form {
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.form-container form button[type="submit"] {
+  align-self: center;
+}
+
 label {
   font-size: 0.9rem;
 }

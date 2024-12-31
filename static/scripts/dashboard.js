@@ -23,15 +23,8 @@ function checkJustLogin() {
 }
 
 function init() {
-  // Check if the user just logged in
   checkJustLogin();
-
-  // Enable the logo click
   enableLogoClick();
-
-  // Enable the logout button click
   enableLogoutClick();
-
-  // Enable message modal hide
   enableModalHide("message-modal");
 }

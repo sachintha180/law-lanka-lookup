@@ -63,15 +63,8 @@ function enableRegister() {
 }
 
 function init() {
-  // Enable the logo click
   enableLogoClick();
-
-  // Enable the login button click
   enableLoginClick();
-
-  // Enable registration
   enableRegister();
-
-  // Enable message modal hide
   enableModalHide("message-modal");
 }

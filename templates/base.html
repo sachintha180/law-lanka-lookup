@@ -27,7 +27,8 @@
         {% endblock nav_buttons %}
       </section>
     </header>
-    {% include "partials/message-modal.html" %}
+    {% block modals %}
+    {% endblock modals %}
     {% block content %}
     {% endblock content %}
     {% include "partials/footer.html" %}

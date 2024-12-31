@@ -13,6 +13,11 @@
   <button class="button" id="logout">Logout</button>
 {% endblock nav_buttons %}
 
+{% block modals %}
+  {% include "partials/message-modal.html" %}
+  {% include "partials/edit-profile-modal.html" %}
+{% endblock modals %}
+
 {% block content %}
   <main class="container cols">
     <section id="profile" class="cols">

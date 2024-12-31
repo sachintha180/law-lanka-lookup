@@ -127,7 +127,11 @@ def dashboard():
 
     # Render dashboard template w/ user data
     return render_template(
-        "dashboard.html", user=user, latest_reads=latest_reads, last_online=last_online
+        "dashboard.html",
+        user=user,
+        latest_reads=latest_reads,
+        last_online=last_online,
+        legal_occupations=legal_occupations,
     )
 
 
@@ -139,6 +143,11 @@ def logout():
 
     # Redirect to landing page
     return redirect(url_for("landing"))
+
+
+@app.route("/edit_profile", methods=["POST"])
+def edit_profile():
+    return jsonify({"success": True})
 
 
 if __name__ == "__main__":
