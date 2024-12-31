@@ -1,4 +1,3 @@
-from flask import jsonify
 from data import legal_occupations
 
 

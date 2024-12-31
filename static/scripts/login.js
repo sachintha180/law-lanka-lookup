@@ -3,7 +3,7 @@ import {
   enableRegisterClick,
   showModal,
   enableModalHide,
-  getFormJSON,
+  postJSONAndRedirect,
 } from "./common.js";
 
 window.onload = init;
@@ -37,50 +37,27 @@ function enableLogin() {
     // Get the form data
     const formData = new FormData(form);
 
-    try {
-      // Get the JSON data
-      const { success, message, data } = getFormJSON(formData);
+    // Try to log in
+    postJSONAndRedirect(formData, form.action, "/dashboard", "Login Error", {
+      login: true,
+    });
 
-      // Throw error if unsuccessful
-      if (!success) {
-        throw new Error(message);
-      }
-
-      // Send data to Flask via POST request
-      const response = await fetch(form.action, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      // Parse the response
-      const result = await response.json();
-
-      // Redirect to dashboard page if successful
-      if (result.success) {
-        window.location.href = "/dashboard?login=true";
-      }
-
-      // Otherwise, throw error
-      else {
-        throw new Error(result.message);
-      }
-    } catch (error) {
-      // Show the error in the message modal
-      showModal("message-modal", "Login Error", error.message, "error");
-    }
-
-    // Enable the form button
+    // Re-enable the form button
     formButton.disabled = false;
   };
 }
 
 function init() {
+  // Check if the user has just registered
   checkJustRegistered();
+
+  // Enable clicking the navigation buttons
   enableLogoClick();
   enableRegisterClick();
+
+  // Enable logging in
   enableLogin();
+
+  // Enable hiding the message modal
   enableModalHide("message-modal");
 }

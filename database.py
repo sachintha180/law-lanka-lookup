@@ -131,3 +131,38 @@ class SQLiteDatabase:
             conn.close()
 
         return status
+
+    def update_user(self, user_id, user_data, hashed_password):
+        # Get database connection
+        conn = self.get_connection()
+
+        status = {}
+        try:
+            # Try to update user in database
+            conn.execute(
+                """
+                UPDATE users
+                SET full_name = ?, occupation = ?, password = ?
+                WHERE id = ?
+                """,
+                (
+                    user_data["full_name"],
+                    user_data["occupation"],
+                    hashed_password,
+                    user_id,
+                ),
+            )
+            conn.commit()
+
+            # Update status
+            status = {"success": True, "message": "User updated successfully."}
+
+        except sqlite3.Error as e:
+            # Update status
+            status = {"success": False, "message": str(e)}
+
+        finally:
+            # Close database connection
+            conn.close()
+
+        return status

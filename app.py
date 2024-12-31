@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 
 from database import SQLiteDatabase
-from utls import parse_user_data, validate_registration_data
+from utils import parse_user_data, validate_registration_data
 
 # Load environment variables
 load_dotenv(".env.local")
@@ -147,7 +147,38 @@ def logout():
 
 @app.route("/edit_profile", methods=["POST"])
 def edit_profile():
-    return jsonify({"success": True})
+    # Check if user is not logged in
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+
+    # Parse user data into a dictionary
+    user_data = parse_user_data(
+        request, "full_name", "email", "occupation", "password", "confirm_password"
+    )
+
+    # Validate user data
+    validation_result = validate_registration_data(user_data)
+    if not validation_result["success"]:
+        return (
+            jsonify({"success": False, "message": validation_result["message"]}),
+            400,
+        )
+
+    # Hash password
+    hashed_password = generate_password_hash(user_data["password"])
+
+    # Update occupation via dictionary
+    user_data["occupation"] = legal_occupations[user_data["occupation"]]
+
+    # Update user in database
+    status = db.update_user(session["user_id"], user_data, hashed_password)
+
+    # Update session email if successful
+    if status["success"]:
+        session["user_email"] = user_data["email"]
+
+    # Return JSON status w/ appropriate status code
+    return jsonify(status), 200 if status["success"] else 500
 
 
 if __name__ == "__main__":

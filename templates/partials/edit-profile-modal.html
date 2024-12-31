@@ -1,6 +1,11 @@
-<section id="edit-profile-modal" class="modal">
+<section id="edit-profile-modal" class="modal hidden">
     <div class="form-container modal-container card">
-        <p class="modal-title card-title">Edit Profile</p>
+        <div class="modal-top-controls rows">
+            <p class="modal-title card-title">Edit Profile</p>
+            <button class="button cols ok-button">
+                <img src="{{ url_for('static', filename='images/cross.svg') }}" alt="Close" height="15" width="15" />
+            </button>
+        </div>
         <form action="{{ url_for('edit_profile') }}" method="post" id="edit-profile-form" class="cols">
             <label for="full-name">Full Name</label>
             <input type="text"

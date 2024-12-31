@@ -33,10 +33,15 @@ export function showModal(modalId, title, message, type) {
   const modalMessage = modalContainer.querySelector(".modal-message");
 
   modal.classList.remove("hidden");
-  modalContainer.classList.add(type);
-
-  modalTitle.innerText = title;
-  modalMessage.innerText = message;
+  if (type) {
+    modalContainer.classList.add(type);
+  }
+  if (title) {
+    modalTitle.innerText = title;
+  }
+  if (message) {
+    modalMessage.innerText = message;
+  }
 }
 
 export function enableModalHide(modalId) {
@@ -68,4 +73,53 @@ export function getFormJSON(formData) {
     message: null,
     data: data,
   };
+}
+
+export async function postJSONAndRedirect(
+  formData,
+  submissionUrl,
+  redirectUrl,
+  errorTitle,
+  queryParams
+) {
+  try {
+    // Get the JSON data
+    const { success, message, data } = getFormJSON(formData);
+
+    // Throw error if unsuccessful
+    if (!success) {
+      throw new Error(message);
+    }
+
+    // Send data to Flask via POST request
+    const response = await fetch(submissionUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    // Parse the response
+    const result = await response.json();
+
+    // Format query parameters into a string
+    let queryParamsString = "";
+    for (let key in queryParams) {
+      queryParamsString += `&${key}=${queryParams[key]}`;
+    }
+
+    // Redirect to the specified URL if successful
+    if (result.success) {
+      window.location.href = `${redirectUrl}?${queryParamsString.slice(1)}`;
+    }
+
+    // Otherwise, throw error
+    else {
+      throw new Error(result.message);
+    }
+  } catch (error) {
+    // Show the error in the message modal
+    showModal("message-modal", errorTitle, error.message, "error");
+  }
 }
