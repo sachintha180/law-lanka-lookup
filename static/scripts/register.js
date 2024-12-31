@@ -53,8 +53,8 @@ function enableRegister() {
         throw new Error(result.message);
       }
     } catch (error) {
-      // Show the error
-      showModal("Registration Error", error.message, "error");
+      // Show the error in the message modal
+      showModal("message-modal", "Registration Error", error.message, "error");
     }
 
     // Enable the form button

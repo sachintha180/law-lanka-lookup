@@ -11,9 +11,10 @@ function checkJustLogin() {
   // Get the URL parameters
   const urlParams = new URLSearchParams(window.location.search);
 
-  // Show the modal if the URL contains the 'login' parameter
+  // Show the message modal if the URL contains the 'login' parameter
   if (urlParams.get("login") === "true") {
     showModal(
+      "message-modal",
       "Login Successful",
       "You have successfully logged in. Welcome back!",
       "success"

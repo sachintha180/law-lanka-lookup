@@ -26,11 +26,11 @@ export function enableRegisterClick() {
   };
 }
 
-export function showModal(title, message, type) {
-  const modal = document.getElementById("modal");
-  const modalContainer = document.getElementById("modal-container");
-  const modalTitle = document.getElementById("modal-title");
-  const modalMessage = document.getElementById("modal-message");
+export function showModal(modalId, title, message, type) {
+  const modal = document.getElementById(modalId);
+  const modalContainer = modal.querySelector(".modal-container");
+  const modalTitle = modalContainer.querySelector(".modal-title");
+  const modalMessage = modalContainer.querySelector(".modal-message");
 
   modal.classList.remove("hidden");
   modalContainer.classList.add(type);
@@ -39,10 +39,10 @@ export function showModal(title, message, type) {
   modalMessage.innerText = message;
 }
 
-export function enableModalHide() {
-  const modal = document.getElementById("modal");
-  const modalContainer = document.getElementById("modal-container");
-  const okButton = document.getElementById("modal-ok");
+export function enableModalHide(modalId) {
+  const modal = document.getElementById(modalId);
+  const modalContainer = modal.querySelector(".modal-container");
+  const okButton = modalContainer.querySelector(".ok-button");
 
   okButton.onclick = function () {
     modal.classList.add("hidden");

@@ -12,9 +12,10 @@ function checkJustRegistered() {
   // Get the URL parameters
   const urlParams = new URLSearchParams(window.location.search);
 
-  // Show the modal if the URL contains the 'registered' parameter
+  // Show the message modal if the URL contains the 'registered' parameter
   if (urlParams.get("registered") === "true") {
     showModal(
+      "message-modal",
       "Registration Successful",
       "You have successfully registered. Please log in to continue.",
       "success"
@@ -67,8 +68,8 @@ function enableLogin() {
         throw new Error(result.message);
       }
     } catch (error) {
-      // Show the error
-      showModal("Login Error", error.message, "error");
+      // Show the error in the message modal
+      showModal("message-modal", "Login Error", error.message, "error");
     }
 
     // Enable the form button

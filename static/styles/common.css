@@ -112,7 +112,7 @@
 }
 
 /* Modal Styles (derives card styles) */
-#modal {
+.modal {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,31 +123,31 @@
   z-index: 100;
 }
 
-#modal.hidden {
+.modal.hidden {
   display: none;
 }
 
-#modal-container.card p.card-title {
+.modal-container.card p.card-title {
   border-bottom: 1px solid var(--text-color);
 }
 
-#modal-container.card div.controls button {
+.modal-container.card div.controls button {
   background-color: var(--text-color);
 }
 
-#modal-container.card.error {
+.modal-container.card.error {
   background-color: var(--danger-color);
 }
 
-#modal-container.card.success {
+.modal-container.card.success {
   background-color: var(--success-color);
 }
 
-#modal-container.card.error div.controls button {
+.modal-container.card.error div.controls button {
   color: var(--danger-color);
 }
 
-#modal-container.card.success div.controls button {
+.modal-container.card.success div.controls button {
   color: var(--success-color);
 }
 
