@@ -8,7 +8,7 @@ def parse_user_data(request, *keys):
     return user_data
 
 
-def validate_registration_data(user_data):
+def validate_user_data(user_data):
     # Check if full name has at least two words
     if len(user_data["full_name"].split()) < 2:
         return {

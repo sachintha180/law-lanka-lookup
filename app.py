@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_dotenv
 
 from database import SQLiteDatabase
-from utils import parse_user_data, validate_registration_data
+from utils import parse_user_data, validate_user_data
 
 # Load environment variables
 load_dotenv(".env.local")
@@ -47,7 +47,7 @@ def register():
         )
 
         # Validate user data
-        validation_result = validate_registration_data(user_data)
+        validation_result = validate_user_data(user_data)
         if not validation_result["success"]:
             return (
                 jsonify({"success": False, "message": validation_result["message"]}),
@@ -157,7 +157,7 @@ def edit_profile():
     )
 
     # Validate user data
-    validation_result = validate_registration_data(user_data)
+    validation_result = validate_user_data(user_data)
     if not validation_result["success"]:
         return (
             jsonify({"success": False, "message": validation_result["message"]}),
