@@ -1,72 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="{{ url_for('static', filename='favicon.ico') }}"
-    />
-    <link
-      href="{{ url_for('static', filename='styles/common.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='styles/landing.css') }}"
-      rel="stylesheet"
-    />
-    <script
-      type="module"
-      src="{{ url_for('static', filename='scripts/common.js') }}"
-    ></script>
-    <script
-      type="module"
-      src="{{ url_for('static', filename='scripts/landing.js') }}"
-    ></script>
-    <title>L3 | Welcome</title>
-  </head>
-  <body class="container cols">
-    <header id="navbar" class="rows">
-      <img
-        src="{{ url_for('static', filename='images/logo.svg') }}"
-        alt="Law Lanka Lookup Logo"
-        id="logo"
-        height="50"
-        width="50"
-      />
-      <section id="nav-buttons" class="rows">
-        <button id="register" class="button">Register</button>
-        <button id="login" class="button">Login</button>
-      </section>
-    </header>
+{% extends "base.html" %}
 
-    <main class="container rows">
-      <section id="title">
-        <p>Law</p>
-        <p>Lanka</p>
-        <p>Lookup</p>
-      </section>
-      <section id="main-image" class="rows">
-        <img
-          src="{{ url_for('static', filename='images/logo-letters.svg') }}"
-          alt="Main Image"
-          height="200"
-          width="200"
-        />
-      </section>
-      <section id="features" class="container cols">
-        {% for feature in features %}
-        <div class="card">
-          <p class="card-title">{{ feature.title }}</p>
-          <p>{{ feature.description }}</p>
-        </div>
-        {% endfor %}
-      </section>
-    </main>
+{% block additional_links %}
+  <link href="{{ url_for('static', filename='styles/landing.css') }}" rel="stylesheet" />
+  <script type="module" src="{{ url_for('static', filename='scripts/landing.js') }}"></script>
+{% endblock additional_links %}
 
-    <footer class="rows">
-      <p>&copy; 2024 Law Lanka Lookup. All Rights Reserved.</p>
-    </footer>
-  </body>
-</html>
+{% block title %}
+  L3 | Welcome
+{% endblock title %}
+
+{% block nav_buttons %}
+  <button class="button" id="register">Register</button>
+  <button class="button" id="login">Login</button>
+{% endblock nav_buttons %}
+
+{% block content %}
+  <section id="title">
+    <p>Law</p>
+    <p>Lanka</p>
+    <p>Lookup</p>
+  </section>
+  <section id="main-image" class="rows">
+    <img src="{{ url_for('static', filename='images/logo-letters.svg') }}"
+         alt="Main Image"
+         height="200"
+         width="200" />
+  </section>
+  <section id="features" class="container cols">
+    {% for feature in features %}
+      <div class="card">
+        <p class="card-title">{{ feature.title }}</p>
+        <p>{{ feature.description }}</p>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock content %}
