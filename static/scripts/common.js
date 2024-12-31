@@ -57,7 +57,7 @@ export function getFormJSON(formData) {
     if (!value) {
       return {
         success: false,
-        error: `Please fill in the ${key} field.`,
+        message: `Please fill in the ${key} field.`,
         data: data,
       };
     }
@@ -65,7 +65,7 @@ export function getFormJSON(formData) {
   }
   return {
     success: true,
-    error: null,
+    message: null,
     data: data,
   };
 }

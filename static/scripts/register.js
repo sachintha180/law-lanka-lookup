@@ -24,11 +24,11 @@ function enableRegister() {
 
     try {
       // Get the JSON data
-      const { success, data, error } = getFormJSON(formData);
+      const { success, message, data } = getFormJSON(formData);
 
       // Throw error if unsuccessful
       if (!success) {
-        throw new Error(error);
+        throw new Error(message);
       }
 
       // Send data to Flask via POST request
@@ -50,16 +50,16 @@ function enableRegister() {
 
       // Otherwise, throw error
       else {
-        throw new Error(result.error);
+        throw new Error(result.message);
       }
     } catch (error) {
       // Show the error
       showModal("Registration Error", error.message, "error");
     }
-  };
 
-  // Enable the form button
-  formButton.disabled = false;
+    // Enable the form button
+    formButton.disabled = false;
+  };
 }
 
 function init() {

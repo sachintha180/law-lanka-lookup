@@ -3,7 +3,7 @@ import sqlite3
 
 
 class SQLiteDatabase:
-    def __init__(self, database_url):
+    def __init__(self, database_url=None):
         # Get the database URL
         self.database_url = database_url
         if self.database_url is None:
@@ -62,10 +62,13 @@ class SQLiteDatabase:
         try:
             # Try to insert user into database
             conn.execute(
-                "INSERT INTO users (email, full_name, occupation, password) VALUES (?, ?, ?, ?)",
+                """
+                INSERT INTO users (email, full_name, occupation, password)
+                VALUES (?, ?, ?, ?)
+                """,
                 (
                     user_data["email"],
-                    user_data["fullName"],
+                    user_data["full_name"],
                     user_data["occupation"],
                     hashed_password,
                 ),
@@ -92,7 +95,7 @@ class SQLiteDatabase:
 
         return status
 
-    def select_user(self, user_id, email):
+    def select_user(self, user_id=None, email=None):
         # Get database connection
         conn = self.get_connection()
 
@@ -100,7 +103,11 @@ class SQLiteDatabase:
         try:
             # Try to select user from database
             cursor = conn.execute(
-                "SELECT * FROM users WHERE id = ? OR email = ?", (user_id, email)
+                """
+                SELECT * FROM users
+                WHERE id = ? OR email = ?
+                """,
+                (user_id, email),
             )
             user = cursor.fetchone()
 
@@ -112,7 +119,7 @@ class SQLiteDatabase:
             status = {
                 "success": True,
                 "message": "User retrieved successfully.",
-                "user": user,
+                "user": dict(user),
             }
 
         except sqlite3.Error as e:

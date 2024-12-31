@@ -38,11 +38,11 @@ function enableLogin() {
 
     try {
       // Get the JSON data
-      const { success, data, error } = getFormJSON(formData);
+      const { success, message, data } = getFormJSON(formData);
 
       // Throw error if unsuccessful
       if (!success) {
-        throw new Error(error);
+        throw new Error(message);
       }
 
       // Send data to Flask via POST request
@@ -64,7 +64,7 @@ function enableLogin() {
 
       // Otherwise, throw error
       else {
-        throw new Error(result.error);
+        throw new Error(result.message);
       }
     } catch (error) {
       // Show the error
