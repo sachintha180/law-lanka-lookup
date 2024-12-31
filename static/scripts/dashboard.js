@@ -2,7 +2,6 @@ import {
   enableLogoClick,
   enableLogoutClick,
   enableModalHide,
-  getFormJSON,
   postJSONAndRedirect,
   showModal,
 } from "./common.js";

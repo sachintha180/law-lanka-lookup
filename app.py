@@ -129,9 +129,9 @@ def dashboard():
     return render_template(
         "dashboard.html",
         user=user,
+        legal_occupations=legal_occupations,
         latest_reads=latest_reads,
         last_online=last_online,
-        legal_occupations=legal_occupations,
     )
 
 

@@ -9,6 +9,13 @@ def parse_user_data(request, *keys):
 
 
 def validate_registration_data(user_data):
+    # Check if full name has at least two words
+    if len(user_data["full_name"].split()) < 2:
+        return {
+            "success": False,
+            "message": "Full name must have at least two names.",
+        }
+
     # Check if password and confirm password match
     if user_data["password"] != user_data["confirm_password"]:
         return {

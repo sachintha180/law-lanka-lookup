@@ -142,11 +142,12 @@ class SQLiteDatabase:
             conn.execute(
                 """
                 UPDATE users
-                SET full_name = ?, occupation = ?, password = ?
+                SET full_name = ?, email = ?, occupation = ?, password = ?
                 WHERE id = ?
                 """,
                 (
                     user_data["full_name"],
+                    user_data["email"],
                     user_data["occupation"],
                     hashed_password,
                     user_id,
