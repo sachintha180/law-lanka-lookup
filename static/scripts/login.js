@@ -90,6 +90,6 @@ function init() {
   // Enable login
   enableLogin();
 
-  // Enable modal hide
-  enableModalHide();
+  // Enable message modal hide
+  enableModalHide("message-modal");
 }

@@ -28,10 +28,8 @@
       </section>
     </header>
     {% include "partials/message-modal.html" %}
-    <main class="container cols">
-      {% block content %}
-      {% endblock content %}
-    </main>
+    {% block content %}
+    {% endblock content %}
     {% include "partials/footer.html" %}
   </body>
 </html>

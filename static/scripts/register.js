@@ -72,6 +72,6 @@ function init() {
   // Enable registration
   enableRegister();
 
-  // Enable modal hide
-  enableModalHide();
+  // Enable message modal hide
+  enableModalHide("message-modal");
 }

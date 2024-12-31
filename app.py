@@ -2,7 +2,6 @@ import os
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from data import features, latest_reads, last_online, legal_occupations
 from werkzeug.security import generate_password_hash, check_password_hash
-import sqlite3
 from dotenv import load_dotenv
 
 from database import SQLiteDatabase

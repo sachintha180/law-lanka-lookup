@@ -15,23 +15,25 @@
 {% endblock nav_buttons %}
 
 {% block content %}
-  <section id="title">
-    <p>Law</p>
-    <p>Lanka</p>
-    <p>Lookup</p>
-  </section>
-  <section id="main-image" class="rows">
-    <img src="{{ url_for('static', filename='images/logo-letters.svg') }}"
-         alt="Main Image"
-         height="200"
-         width="200" />
-  </section>
-  <section id="features" class="container cols">
-    {% for feature in features %}
-      <div class="card">
-        <p class="card-title">{{ feature.title }}</p>
-        <p>{{ feature.description }}</p>
-      </div>
-    {% endfor %}
-  </section>
+  <main class="container rows">
+    <section id="title">
+      <p>Law</p>
+      <p>Lanka</p>
+      <p>Lookup</p>
+    </section>
+    <section id="main-image" class="rows">
+      <img src="{{ url_for('static', filename='images/logo-letters.svg') }}"
+           alt="Main Image"
+           height="200"
+           width="200" />
+    </section>
+    <section id="features" class="container cols">
+      {% for feature in features %}
+        <div class="card">
+          <p class="card-title">{{ feature.title }}</p>
+          <p>{{ feature.description }}</p>
+        </div>
+      {% endfor %}
+    </section>
+  </main>
 {% endblock content %}

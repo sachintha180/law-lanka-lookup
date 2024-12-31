@@ -32,6 +32,6 @@ function init() {
   // Enable the logout button click
   enableLogoutClick();
 
-  // Enable modal hide
-  enableModalHide();
+  // Enable message modal hide
+  enableModalHide("message-modal");
 }
