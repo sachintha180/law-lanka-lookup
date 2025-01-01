@@ -1,26 +1,25 @@
 {% extends "base.html" %}
-
 {% block additional_links %}
-  <script type="module" src="{{ url_for('static', filename='scripts/register.js') }}"></script>
+  <script type="module"
+          src="{{ url_for('static', filename='scripts/register.js') }}"></script>
 {% endblock additional_links %}
-
 {% block title %}
   L3 | Register
 {% endblock title %}
-
 {% block nav_buttons %}
   <button class="button" id="login">Login</button>
 {% endblock nav_buttons %}
-
 {% block modals %}
   {% include "partials/message-modal.html" %}
 {% endblock modals %}
-
 {% block content %}
   <main class="container rows">
     <section id="register-form-container" class="form-container card">
       <p class="card-title">Register</p>
-      <form action="{{ url_for('register') }}" method="post" id="register-form" class="cols">
+      <form action="{{ url_for('register') }}"
+            method="post"
+            id="register-form"
+            class="cols">
         <label for="full-name">Full Name</label>
         <input type="text"
                id="full-name"
@@ -28,10 +27,13 @@
                placeholder="Enter your full name"
                autocomplete="name"
                required />
-
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required />
-
+        <input type="email"
+               id="email"
+               name="email"
+               placeholder="Enter your email"
+               autocomplete="email"
+               required />
         <label for="occupation">Occupation</label>
         <select id="occupation" name="occupation" required>
           <option value="" disabled selected>Select your occupation</option>
@@ -39,7 +41,6 @@
             <option value="{{ occupationId }}">{{ occupation }}</option>
           {% endfor %}
         </select>
-
         <label for="password">Password</label>
         <input type="password"
                id="password"
@@ -47,7 +48,6 @@
                placeholder="Enter your password"
                autocomplete="new-password"
                required />
-
         <label for="confirm-password">Confirm Password</label>
         <input type="password"
                id="confirm-password"
@@ -55,8 +55,9 @@
                placeholder="Confirm your password"
                required
                class="input-field" />
-
-        <button type="submit" id="register-button" class="button">Register</button>
+        <div class="controls rows">
+          <button type="submit" id="register-button" class="button">Register</button>
+        </div>
       </form>
     </section>
   </main>
