@@ -16,6 +16,7 @@
 {% block modals %}
   {% include "partials/message-modal.html" %}
   {% include "partials/edit-profile-modal.html" %}
+  {% include "partials/delete-account-confirmation-modal.html" %}
 {% endblock modals %}
 
 {% block content %}
@@ -39,9 +40,9 @@
             <span class="badge">Occupation</span> {{ user.occupation }}
           </p>
         </div>
-        <div id="controls" class="cols">
+        <div id="options" class="cols">
           <button id="edit-profile-activate-button" class="button secondary">Edit Profile</button>
-          <button class="button danger">Delete Account</button>
+          <button id="delete-account-activate-button" class="button danger">Delete Account</button>
         </div>
       </div>
     </section>

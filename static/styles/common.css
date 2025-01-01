@@ -12,7 +12,9 @@
   --primary-hover-color: #d6d9f0;
   --secondary-hover-color: #3a3a3a;
   --danger-hover-color: #ff6666;
-  --danger-light-hover-color: #ffdfdf;
+  --danger-light-hover-color: #ffc9c9;
+  --success-hover-color: #00cc70;
+  --success-light-hover-color: #c6ffe6;
   --border-color: #707070;
   --primary-badge-color: #080d49;
   --secondary-badge-color: #4d4d4d;
@@ -86,6 +88,33 @@
   background-color: var(--danger-hover-color);
 }
 
+.button.danger-light {
+  background-color: var(--text-color);
+  color: var(--danger-color);
+}
+
+.button.danger-light:hover {
+  background-color: var(--danger-light-hover-color);
+}
+
+.button.success {
+  background-color: var(--success-color);
+  color: var(--text-color);
+}
+
+.button.success:hover {
+  background-color: var(--success-hover-color);
+}
+
+.button.success-light {
+  background-color: var(--text-color);
+  color: var(--success-color);
+}
+
+.button.success-light:hover {
+  background-color: var(--success-light-hover-color);
+}
+
 /* Card Styles */
 .card {
   background-color: var(--secondary-color);
@@ -108,7 +137,7 @@
 }
 
 .card div.controls {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 /* Modal Styles (derives card styles) */
@@ -126,28 +155,20 @@
   display: none;
 }
 
-.modal-container.card p.card-title {
+.modal-container p.card-title {
   border-bottom: 1px solid var(--text-color);
 }
 
-.modal-container.card div.controls button {
-  background-color: var(--text-color);
+.modal-container .modal-top-controls p.card-title {
+  width: 100%;
 }
 
-.modal-container.card.error {
+.modal-container.danger {
   background-color: var(--danger-color);
 }
 
-.modal-container.card.success {
+.modal-container.success {
   background-color: var(--success-color);
-}
-
-.modal-container.card.error div.controls button {
-  color: var(--danger-color);
-}
-
-.modal-container.card.success div.controls button {
-  color: var(--success-color);
 }
 
 /* Modal Z-indices */
@@ -193,6 +214,13 @@ select {
   border-radius: 0.2rem;
   font-weight: 600;
   width: 100%;
+}
+
+input[type="text"]:last-of-type,
+input[type="email"]:last-of-type,
+input[type="password"]:last-of-type,
+select:last-of-type {
+  margin-bottom: 0;
 }
 
 /* Logo Styles */

@@ -39,13 +39,13 @@ main section#profile div#profile-details div#details span.badge {
   display: inline-block;
 }
 
-main section#profile div#controls {
+main section#profile div#options {
   align-items: flex-start;
   margin-left: auto;
   gap: 0.5rem;
 }
 
-main section#profile div#controls button {
+main section#profile div#options button {
   width: 100%;
 }
 
@@ -98,15 +98,4 @@ main div#divider section.card div.items div.item div.cols div.rows span.badge {
 main div#divider section.card div.items div.item p.small {
   font-size: 0.8rem;
   color: var(--text-color);
-}
-
-section#edit-profile-modal
-  div.form-container
-  div.modal-top-controls
-  p.card-title {
-  width: 100%;
-}
-
-section#edit-profile-modal div.form-container div.modal-top-controls button {
-  font-size: 1rem;
 }

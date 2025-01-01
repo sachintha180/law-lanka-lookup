@@ -62,6 +62,30 @@ function enableEditProfile() {
   };
 }
 
+function enableDeleteAccount() {
+  const form = document.getElementById("delete-account-form");
+  const formButton = document.getElementById("delete-account-button");
+
+  form.onsubmit = async function (event) {
+    // Prevent the form from submitting
+    event.preventDefault();
+
+    // Disable the form button
+    formButton.disabled = true;
+
+    // Get the form data
+    const formData = new FormData(form);
+
+    // Try to delete the account
+    postJSONAndRedirect(formData, form.action, "/landing", "Delete Error", {
+      deleted: true,
+    });
+
+    // Re-enable the form button
+    formButton.disabled = false;
+  };
+}
+
 function init() {
   // Check if user just logged in
   checkJustLogin();
@@ -76,16 +100,29 @@ function init() {
   // Enable editing the profile
   enableEditProfile();
 
-  // Enable hiding the message modal
-  enableModalHide("message-modal");
-
   // Enable showing and hiding the edit profile modal
-  const modalId = "edit-profile-modal";
+  const editProfileModalId = "edit-profile-modal";
   const editProfileActivateButton = document.getElementById(
     "edit-profile-activate-button"
   );
   editProfileActivateButton.onclick = function () {
-    showModal(modalId);
+    showModal(editProfileModalId);
   };
-  enableModalHide(modalId);
+  enableModalHide(editProfileModalId);
+
+  // Enable deleting the account
+  enableDeleteAccount();
+
+  // Enable showing and hiding the delete account confirmation modal
+  const deleteAccountModalId = "delete-account-confirmation-modal";
+  const deleteAccountActivateButton = document.getElementById(
+    "delete-account-activate-button"
+  );
+  deleteAccountActivateButton.onclick = function () {
+    showModal(deleteAccountModalId, null, null, "danger");
+  };
+  enableModalHide(deleteAccountModalId);
+
+  // Enable hiding the message modal
+  enableModalHide("message-modal");
 }

@@ -1,0 +1,17 @@
+<section id="delete-account-confirmation-modal" class="modal hidden">
+    <div class="form-container modal-container card">
+        <div class="modal-top-controls rows">
+            <p class="modal-title card-title">Delete Account</p>
+            <button class="button cols ok-button">
+                <img src="{{ url_for('static', filename='images/cross.svg') }}" alt="Close" height="15" width="15" />
+            </button>
+        </div>
+        <form action="{{ url_for('delete_account') }}" method="post" id="delete-account-form" class="cols">
+            <p>Are you sure you want to delete your account?</p>
+            <p>This action cannot be undone.</p>
+            <div class="controls">
+                <button type="submit" id="delete-account-button" class="button">Delete</button>
+            </div>
+        </form>
+    </div>
+</section>

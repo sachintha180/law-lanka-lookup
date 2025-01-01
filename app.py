@@ -137,6 +137,10 @@ def dashboard():
 
 @app.route("/logout", methods=["GET"])
 def logout():
+    # Check if user is not logged in
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+
     # Remove session variables
     session.pop("user_id", None)
     session.pop("user_email", None)
@@ -176,6 +180,23 @@ def edit_profile():
     # Update session email if successful
     if status["success"]:
         session["user_email"] = user_data["email"]
+
+    # Return JSON status w/ appropriate status code
+    return jsonify(status), 200 if status["success"] else 500
+
+
+@app.route("/delete_account", methods=["POST"])
+def delete_account():
+    # Check if user is not logged in
+    if "user_id" not in session:
+        return redirect(url_for("login"))
+
+    # Delete user from database
+    status = db.delete_user(session["user_id"])
+
+    # Remove session variables
+    session.pop("user_id", None)
+    session.pop("user_email", None)
 
     # Return JSON status w/ appropriate status code
     return jsonify(status), 200 if status["success"] else 500

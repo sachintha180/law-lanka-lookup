@@ -31,10 +31,14 @@ export function showModal(modalId, title, message, type) {
   const modalContainer = modal.querySelector(".modal-container");
   const modalTitle = modalContainer.querySelector(".modal-title");
   const modalMessage = modalContainer.querySelector(".modal-message");
+  const buttons = modalContainer.querySelectorAll(".button");
 
   modal.classList.remove("hidden");
   if (type) {
     modalContainer.classList.add(type);
+    buttons.forEach((button) => {
+      button.classList.add(`${type}-light`);
+    });
   }
   if (title) {
     modalTitle.innerText = title;
@@ -47,12 +51,17 @@ export function showModal(modalId, title, message, type) {
 export function enableModalHide(modalId) {
   const modal = document.getElementById(modalId);
   const modalContainer = modal.querySelector(".modal-container");
+  const buttons = modalContainer.querySelectorAll(".button");
   const okButton = modalContainer.querySelector(".ok-button");
 
   okButton.onclick = function () {
     modal.classList.add("hidden");
-    modalContainer.classList.remove("error");
+    modalContainer.classList.remove("danger");
     modalContainer.classList.remove("success");
+    buttons.forEach((button) => {
+      button.classList.remove("danger-light");
+      button.classList.remove("success-light");
+    });
   };
 }
 
@@ -120,6 +129,6 @@ export async function postJSONAndRedirect(
     }
   } catch (error) {
     // Show the error in the message modal
-    showModal("message-modal", errorTitle, error.message, "error");
+    showModal("message-modal", errorTitle, error.message, "danger");
   }
 }

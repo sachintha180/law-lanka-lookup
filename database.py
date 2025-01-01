@@ -167,3 +167,32 @@ class SQLiteDatabase:
             conn.close()
 
         return status
+
+    def delete_user(self, user_id):
+        # Get database connection
+        conn = self.get_connection()
+
+        status = {}
+        try:
+            # Try to delete user from database
+            conn.execute(
+                """
+                DELETE FROM users
+                WHERE id = ?
+                """,
+                (user_id,),
+            )
+            conn.commit()
+
+            # Update status
+            status = {"success": True, "message": "User deleted successfully."}
+
+        except sqlite3.Error as e:
+            # Update status
+            status = {"success": False, "message": str(e)}
+
+        finally:
+            # Close database connection
+            conn.close()
+
+        return status
