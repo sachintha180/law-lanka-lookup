@@ -77,7 +77,7 @@ function enableDeleteAccount() {
     const formData = new FormData(form);
 
     // Try to delete the account
-    postJSONAndRedirect(formData, form.action, "/landing", "Delete Error", {
+    postJSONAndRedirect(formData, form.action, "/", "Delete Error", {
       deleted: true,
     });
 
