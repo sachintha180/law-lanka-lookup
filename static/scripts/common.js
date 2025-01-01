@@ -6,22 +6,22 @@ export function enableLogoClick() {
 }
 
 export function enableLoginClick() {
-  const loginBtn = document.getElementById("login");
-  loginBtn.onclick = function () {
+  const loginButton = document.getElementById("login");
+  loginButton.onclick = function () {
     window.location.href = "/login";
   };
 }
 
 export function enableLogoutClick() {
-  const logoutBtn = document.getElementById("logout");
-  logoutBtn.onclick = function () {
+  const logoutButton = document.getElementById("logout");
+  logoutButton.onclick = function () {
     window.location.href = "/logout";
   };
 }
 
 export function enableRegisterClick() {
-  const registerBtn = document.getElementById("register");
-  registerBtn.onclick = function () {
+  const registerButton = document.getElementById("register");
+  registerButton.onclick = function () {
     window.location.href = "/register";
   };
 }
